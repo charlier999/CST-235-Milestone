@@ -78,9 +78,7 @@ public class FileAccessService
 	{
 		// Inituate the writer
 		PrintWriter pw = new PrintWriter(new FileWriter(this.file));
-		
-		
-		
+
 		// write a row for each row in rows
 		for(String row : rows)
 		{

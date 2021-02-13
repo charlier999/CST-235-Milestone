@@ -33,6 +33,19 @@ public class UserModel
 		this.phoneNumber = phoneNumber;
 	}
 
+	public String toFileString()
+	{
+		return id + ","
+			+ userName + ","
+			+ password + ","
+			+ firstName + ","
+			+ lastName + ","
+			+ email + ","
+			+ address + ","
+			+ phoneNumber;
+				
+	}
+	
 	public int getId()
 	{ return id; }
 
