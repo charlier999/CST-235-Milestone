@@ -8,11 +8,29 @@ public class UserModel
 	
 	private String password = "";
 	
-	public UserModel(int id, String userName, String password)
+	private String firstName = "";
+	
+	private String lastName = "";
+	
+	private String email = "";
+	
+	private String address = "";
+	
+	private String phoneNumber = "";
+	
+	public UserModel(int id, String userName, 
+			String password, String firstName, 
+			String lastName, String email,
+			String address, String phoneNumber)
 	{
 		this.id = id;
 		this.userName = userName;
 		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.address = address;
+		this.phoneNumber = phoneNumber;
 	}
 
 	public int getId()
@@ -23,6 +41,23 @@ public class UserModel
 
 	public String getPassword()
 	{ return password; }
+
+	public String getFirstName()
+	{ return firstName; }
+
+	public String getLastName()
+	{ return lastName; }
+
+	public String getEmail()
+	{ return email; }
+
+	public String getAddress()
+	{ return address; }
+
+	public String getPhoneNumber()
+	{ return phoneNumber; }
+
+
 	
 
 }
