@@ -8,6 +8,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+@ManagedBean
+@ViewScoped
+
+
 /**
  * Reads and writes to textfiles
  * @author Charles Davis
