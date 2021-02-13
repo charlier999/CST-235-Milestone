@@ -105,4 +105,33 @@ public class UserService
 		// Update the users List
 		users = ufao.GetAllUsers();
 	}
+
+	/**
+	 * Searches through all of the users and if the username, first name, last name, email, address, 
+	 * or phone number contains the search term, be added to the results.
+	 * @param searchTerm : The term to search through the users.
+	 * @return ArrayList : All users that contains the search Term.
+	 */
+	public ArrayList<UserModel> SearchForUsers(String searchTerm)
+	{
+		// Create the results list
+		ArrayList<UserModel> results = new ArrayList<UserModel>();
+		
+		// Loop though all users
+		for(UserModel user : users)
+		{
+			// if the user's username, first name, last name, email, address, 
+			// or phone number contains the search term add the user to the
+			// result list.
+			if(user.getUserName().equals(searchTerm)) results.add(user);
+			else if(user.getFirstName().contains(searchTerm)) results.add(user);
+			else if(user.getLastName().contains(searchTerm)) results.add(user);
+			else if(user.getEmail().contains(searchTerm)) results.add(user);
+			else if(user.getAddress().contains(searchTerm)) results.add(user);
+			else if(user.getPhoneNumber().contains(searchTerm)) results.add(user);
+		}
+		
+		// return the results
+		return results;
+	}
 }
