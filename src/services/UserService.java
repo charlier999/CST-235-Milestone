@@ -71,6 +71,7 @@ public class UserService
 			{
 				users.set(i, userInput);
 				result = true;
+				break;
 			}
 		}
 		
@@ -136,5 +137,41 @@ public class UserService
 		
 		// return the results
 		return results;
+	}
+
+	/**
+	 * Gets the UserModel by the credentals entered. 
+	 * If the userID is -1, the user was not found.
+	 * @param userName : The username credental.
+	 * @param password : The password credental.
+	 * @return UserModel : The requested user or user was not found user.
+	 */
+	public UserModel GetUserByCredentails(String userName, String password)
+	{
+		// Create the result value with defalt properties
+		UserModel result = new UserModel
+				(-1, 
+				"USER NOT FOUND",
+				"USER NOT FOUND",
+				"USER NOT FOUND",
+				"USER NOT FOUND",
+				"USER NOT FOUND",
+				"USER NOT FOUND",
+				"USER NOT FOUND"
+				);
+		
+		// Loop though all users
+		for(UserModel user : users)
+		{
+			// If the credentals match the current user
+			if(user.getUserName().equals(userName) && user.getPassword().equals(password))
+			{
+				// Set the current user to the result
+				result = user;
+			}
+		}
+		
+		// Return the result
+		return result;
 	}
 }
