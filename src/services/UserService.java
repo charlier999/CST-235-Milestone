@@ -93,8 +93,11 @@ public class UserService
 	 */
 	public void AddUser(UserModel userInput)
 	{
-		// Update the ID number of the inputed user to the next number in the list
-		userInput.setId(users.size());
+		// Get the id number of last user in the list and add one
+		int newID = users.get(users.size()-1).getId()+1;
+		
+		// Update the ID number of the inputed user to the next ID number in the list
+		userInput.setId(newID);
 		
 		// Add the user to the list
 		users.add(userInput);

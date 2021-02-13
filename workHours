@@ -1,5 +1,6 @@
 Charles Davis
 
-UserModel: 30m
+UserModel: 45m
 FileAccessService: 2h 15m
-UserFAO:
+UserFAO: 1h 15m
+UserService: 2h
