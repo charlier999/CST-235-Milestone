@@ -1,5 +1,10 @@
 package beans;
 
+/**
+ * The user itself
+ * @author Charles Davis
+ *
+ */
 public class UserModel
 {
 	private int id = 0;

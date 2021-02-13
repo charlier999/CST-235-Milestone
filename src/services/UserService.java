@@ -10,6 +10,11 @@ import beans.UserModel;
 @ManagedBean
 @ViewScoped
 
+/**
+ * The interactions of the userlist
+ * @author Charles Davis
+ *
+ */
 public class UserService
 {
 	private ArrayList<UserModel> users;

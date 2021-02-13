@@ -11,7 +11,11 @@ import beans.UserModel;
 @ManagedBean
 @ViewScoped
 
-
+/**
+ * The File Access class for geting and writing the users
+ * to usersTable.txt.
+ * @author Charles Davis
+ */
 public class UserFAO
 {
 	private FileAccessService fas;
