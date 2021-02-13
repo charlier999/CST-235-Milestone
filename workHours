@@ -1,6 +1,8 @@
-Charles Davis
+Charles Davis:
+	Week 1:
+		UserModel: 45m
+		FileAccessService: 2h 15m
+		UserFAO: 1h 15m
+		UserService: 2h 30m
 
-UserModel: 45m
-FileAccessService: 2h 15m
-UserFAO: 1h 15m
-UserService: 2h 30m
+		
