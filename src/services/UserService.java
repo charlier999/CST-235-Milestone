@@ -108,7 +108,7 @@ public class UserService
 		catch(IndexOutOfBoundsException ex)
 		{
 			// If there is no users in the list
-			newID = 0;
+			newID = 1;
 		}
 		
 		// Update the ID number of the inputed user to the next ID number in the list
