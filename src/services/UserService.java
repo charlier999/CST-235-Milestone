@@ -87,6 +87,22 @@ public class UserService
 		return result;
 	}
 	
-	
-	
+	/**
+	 * Adds the entered user into the list and updates the userTable
+	 * @param userInput : The user to be added
+	 */
+	public void AddUser(UserModel userInput)
+	{
+		// Update the ID number of the inputed user to the next number in the list
+		userInput.setId(users.size());
+		
+		// Add the user to the list
+		users.add(userInput);
+
+		// Update the userTable with the new user.
+		ufao.UpdateTable(users);
+		
+		// Update the users List
+		users = ufao.GetAllUsers();
+	}
 }
