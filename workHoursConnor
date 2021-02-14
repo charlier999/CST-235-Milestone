@@ -1,7 +1,9 @@
 in rough order of priority
 
+XHTML:
+
 LandingPage
-30m
+1h
 Registration
 30m
 Login
@@ -9,4 +11,9 @@ Login
 Response
 15m 
 Layouts
-0m
+20m
+
+CSS:
+
+stylesheet
+15m
