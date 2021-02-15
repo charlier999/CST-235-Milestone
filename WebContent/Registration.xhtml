@@ -25,7 +25,7 @@
 			Email: <h:inputText id="email" value="#{userModel.email}" title=""/> <h:message for="email"/> <br/>
 			Address: <h:inputText id="address" value="#{userModel.address}" title="" /> <h:message for="address"/> <br/>
 			Phone Number: <h:inputText id="phoneNumber" value="#{userModel.phoneNumber}" title=""/> <h:message for="phoneNumber"/> <br/>
-			<h:commandButton action="#{formController.onSubmit(user)}" value="Submit" />
+			<h:commandButton action="#{formController.onRegistration()}" value="Submit" />
 		</h:form>
 		<h:messages/>
 		

@@ -30,10 +30,21 @@ public class FileAccessService
 	 */
 	public FileAccessService(String filePath)
 	{
-		this.file = new File(filePath);
+		String workingDirectory = System.getProperty("user.dir");
+		
+		this.file = new File(workingDirectory, filePath);
+		
+		System.out.println("Final filepath : " + file.getAbsolutePath());
+		
 		
 		// Create the file if it does not exist
-		try { this.file.createNewFile(); }
+		try 
+		{ 
+			if(this.file.createNewFile())
+				System.out.println("-----------------------------------------{FILE WAS CREATED}---------------------------------------------");
+			else
+				System.out.println("-----------------------------------------{FILE WAS NOT CREATED}---------------------------------------------");
+		}
 		catch (IOException e) { e.printStackTrace(); }
 	}
 	/**

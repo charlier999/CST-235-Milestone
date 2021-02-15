@@ -20,6 +20,17 @@ public class UserFAO
 {
 	private FileAccessService fas;
 	
+	private UserModel errorUser = new UserModel
+			(-1, 
+			"USERS NOT FOUND",
+			"USERS NOT FOUND",
+			"USERS NOT FOUND",
+			"USERS NOT FOUND",
+			"USERS NOT FOUND",
+			"USERS NOT FOUND",
+			"USERS NOT FOUND"
+			);
+	
 	public UserFAO()
 	{
 		this.fas = new FileAccessService("usersTable.txt");
@@ -40,8 +51,17 @@ public class UserFAO
 		ArrayList<UserModel> users = new ArrayList<UserModel>();
 		
 		
+		
+		
+		
 		for(String row : rows)
 		{
+			if(row.equals("No Lines Found"))
+			{
+				users.add(errorUser);
+				break;
+			}
+			
 			// Split the row into an array
 			String[] arrOfStr = row.split(",");
 			

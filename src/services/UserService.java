@@ -111,6 +111,9 @@ public class UserService
 			newID = 1;
 		}
 		
+		// forces the id system to start at 1
+		if(newID < 0) newID = 1;
+		
 		// Update the ID number of the inputed user to the next ID number in the list
 		userInput.setId(newID);
 		
