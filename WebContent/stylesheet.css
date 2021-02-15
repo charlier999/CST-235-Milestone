@@ -2,23 +2,20 @@
 /* 
 GCU PurpleLight 75 43 146	
 GCU PurpleDark  52 29 102
-
+112 80 165
 */
 
 :root {
 	--GCULight: rgb(75,43,146);
 	--GCUDark: rgb(52,29,102);
+	--GCUTint: rgb(112,80,165);
 }
 body {
-	background-color: teal;
+	background-color: var(--GCUTint);
 }
 a{
 	color: white;
 }
 a:hover {
 	color: var(--GCULight);
-}
-h:column {
-	border: 10px solid transparent;
-    padding: 15px;
 }
