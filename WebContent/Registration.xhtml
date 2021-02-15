@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">	
+
+<h:head>
+	<title>Milestone2</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheet.css"/>
+	
+</h:head> 
+
+<body> 
+	<ui:composition template="/layouts/commonLayout.xhtml">
+	
+	<ui:define name="header"/>
+	
+	<ui:define name="content">
+		<p>Hello! Here is our Registration Page :)</p>
+	
+		<h:form>
+			First Name: <h:inputText id="firstName" value="#{userModel.firstName}" title=""/> <h:message for="firstName"/> <br/>
+			Last Name: <h:inputText id="lastName" value="#{userModel.lastName}" title=""/> <h:message for="lastName"/> <br/> 
+			User Name: <h:inputText id="userName" value="#{userModel.userName}" title=""/> <h:message for="userName"/> <br/>
+			Password: <h:inputSecret id="password" value="#{userModel.password}" title="" /> <h:message for="password"/> <br/>
+			Email: <h:inputText id="email" value="#{userModel.email}" title=""/> <h:message for="email"/> <br/>
+			Address: <h:inputText id="address" value="#{userModel.address}" title="" /> <h:message for="address"/> <br/>
+			Phone Number: <h:inputText id="phoneNumber" value="#{userModel.phoneNumber}" title=""/> <h:message for="phoneNumber"/> <br/>
+			<h:commandButton action="#{formController.onSubmit(user)}" value="Submit" />
+		</h:form>
+		<h:messages/>
+		
+		<a href="LandingPage.xhtml">Back to Landing Page :)</a>
+		
+	</ui:define>
+	
+	<ui:define name="footer"/>
+	
+	</ui:composition>
+</body> 
+</html>

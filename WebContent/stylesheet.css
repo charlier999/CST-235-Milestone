@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/* 
+GCU PurpleLight 75 43 146	
+GCU PurpleDark  52 29 102
+
+*/
+
+:root {
+	--GCULight: rgb(75,43,146);
+	--GCUDark: rgb(52,29,102);
+}
+body {
+	background-color: teal;
+}
+a{
+	color: white;
+}
+a:hover {
+	color: var(--GCULight);
+}
+h:column {
+	border: 10px solid transparent;
+    padding: 15px;
+}
