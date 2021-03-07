@@ -30,5 +30,65 @@ public class SongModel
 		this.year = year;
 	}
 
-	// No getters or setters until properties are finished
+	
+	public String toFileString()
+	{
+		return this.id + ","
+			+ this.title + ","
+			+ this.artistUserID + ","
+			+ this.albumID + ","
+			+ this.genre + ","
+			+ this.year;
+	}
+
+
+	public int getId()
+	{ return id; }
+
+
+	public String getTitle()
+	{ return title; }
+
+
+	public int getArtistUserID()
+	{ return artistUserID; }
+
+
+	public int getAlbumID()
+	{ return albumID; }
+
+
+	public String getGenre()
+	{ return genre; }
+
+
+	public int getYear()
+	{ return year; }
+
+
+	public void setId(int id)
+	{ this.id = id; }
+
+
+	public void setTitle(String title)
+	{ this.title = title; }
+
+
+	public void setArtistUserID(int artistUserID)
+	{ this.artistUserID = artistUserID; }
+
+
+	public void setAlbumID(int albumID)
+	{ this.albumID = albumID; }
+
+
+	public void setGenre(String genre)
+	{ this.genre = genre; }
+
+
+	public void setYear(int year)
+	{ this.year = year; }
+	
+	
+	
 }

@@ -6,41 +6,39 @@ import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
+import beans.SongModel;
 import beans.UserModel;
 
 @ManagedBean
 @ViewScoped
 
-/**
- * The File Access class for geting and writing the users
- * to usersTable.txt.
- * @author Charles Davis
- */
-public class UserFAO
+public class SongFAO
 {
+
 	private FileAccessService fas;
 	
-	private UserModel errorUser = new UserModel
-			(-1, 
-			"USERS NOT FOUND",
-			"USERS NOT FOUND",
-			"USERS NOT FOUND",
-			"USERS NOT FOUND",
-			"USERS NOT FOUND",
-			"USERS NOT FOUND",
-			"USERS NOT FOUND"
+	private SongModel errorSong = new SongModel
+			(
+				-1,
+				"ERROR",
+				-1,
+				-1,
+				"ERROR",
+				-1
 			);
 	
-	public UserFAO()
+	
+	public SongFAO()
 	{
-		this.fas = new FileAccessService("usersTable.txt");
+		this.fas = new FileAccessService("songsTable.txt");
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * Gets all of the users from the usersTable.txt
-	 * @return UserModel ArrayList
+	 * Gets all of the songs from the songsTable.txt
+	 * @return SongModel ArrayList
 	 */
-	public ArrayList<UserModel> GetAllUsers()
+	public ArrayList<SongModel> GetAllSongs()
 	{
 		// Get the row data from the File Access Service
 		ArrayList<String> rows = new ArrayList<String>();
@@ -48,13 +46,13 @@ public class UserFAO
 		catch (IOException e) { e.printStackTrace(); }
 		
 		// Create Result ArrayList
-		ArrayList<UserModel> users = new ArrayList<UserModel>();
-				
+		ArrayList<SongModel> songs = new ArrayList<SongModel>();
+		
 		for(String row : rows)
 		{
 			if(row.equals("No Lines Found"))
 			{
-				users.add(errorUser);
+				songs.add(errorSong);
 				break;
 			}
 			
@@ -62,35 +60,32 @@ public class UserFAO
 			String[] arrOfStr = row.split(",");
 			
 			// Apply the split array into the UserModel
-			users.add(new UserModel
+			songs.add(new SongModel
 					(
 						Integer.parseInt(arrOfStr[0]),
 						arrOfStr[1],
-						arrOfStr[2],
-						arrOfStr[3],
+						Integer.parseInt(arrOfStr[2]),
+						Integer.parseInt(arrOfStr[3]),
 						arrOfStr[4],
-						arrOfStr[5],
-						arrOfStr[6],
-						arrOfStr[7]
+						Integer.parseInt(arrOfStr[5])
 					));
 		}
 		// return the ArrayList of users
-		return users;
-		
+		return songs;
 	}
-	
+
 	/**
-	 * Updates the userTable with the users
-	 * @param users UserModel
+	 * Updates the songTable with the songs
+	 * @param songs SongModel
 	 */
-	public void UpdateTable(ArrayList<UserModel> users)
+	public void UpdateTable(ArrayList<SongModel> songs)
 	{
 		// Create the string ArrayList to write to the file
 		ArrayList<String> rows = new ArrayList<String>();
 		
-		for(UserModel user : users)
+		for(SongModel song : songs)
 		{
-			rows.add(user.toFileString());
+			rows.add(song.toFileString());
 		}
 		
 		// Write rows to the file
@@ -103,4 +98,5 @@ public class UserFAO
 			e.printStackTrace();
 		}
 	}
+
 }
