@@ -6,6 +6,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 import beans.SongModel;
+import beans.UserModel;
 import fileAccessServices.SongFAO;
 
 @ManagedBean
@@ -129,6 +130,25 @@ public class SongService
 		songs = sfao.GetAllSongs();
 	}
 	
-	
+	/**
+	 * Searches through song list by title and genre for the search term.
+	 * @param searchTerm : The term to search for.
+	 * @return SongModel ArrayList : All songs that contains the search term.
+	 */
+	public ArrayList<SongModel> SearchForSongs(String searchTerm)
+	{
+		// Create the results list
+		ArrayList<SongModel> results = new ArrayList<SongModel>();
+		
+		// Loop through all songs
+		for(SongModel song : songs)
+		{
+			// If any of the String model properties match the search term, add to list
+			if(song.getTitle().contains(searchTerm)) results.add(song);
+			else if(song.getGenre().contains(searchTerm)) results.add(song);
+		}
+		
+		return results;
+	}
 	
 }
