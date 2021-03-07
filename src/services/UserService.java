@@ -6,6 +6,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 import beans.UserModel;
+import fileAccessServices.UserFAO;
 
 @ManagedBean
 @ViewScoped
