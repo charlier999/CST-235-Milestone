@@ -61,7 +61,8 @@ public class UserService
 	}
 
 	/**
-	 * Updates the entered user in the list and updates the userTable if the user exists.
+	 * Updates the entered user in the list and updates the userTable 
+	 * 	if the user exists.
 	 * @param userInput : The user
 	 * @return boolean : True-UserModel updated. 
 	 * 	False-UserModel not found and userTable not updated.
