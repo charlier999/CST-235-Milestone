@@ -1,23 +1,36 @@
 package beans;
 
+import javax.faces.bean.ManagedBean;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+@ManagedBean
 public class SongModel
 {
+	@NotNull
 	private int id = 0;
 	
+	@NotNull
+	@Size(min=2, max=20)
 	private String title = "";
 	
 	/**
 	 * The userID of the artist
 	 */
+	@NotNull
 	private int artistUserID = 0;
 	
 	/**
 	 * The albumID the song is asscoated with
 	 */
+	@NotNull
 	private int albumID = 0;
 	
+	@NotNull
+	@Size(min=2, max=20)
 	private String genre = "";
 	
+	@NotNull
 	private int year = 0000;
 	
 	public SongModel(int id, String title, int artistUserID, int albumID, String genre, int year)
@@ -28,6 +41,11 @@ public class SongModel
 		this.albumID = albumID;
 		this.genre = genre;
 		this.year = year;
+	}
+	
+	//Used for ManagedBean
+	public SongModel() {
+		
 	}
 
 	
