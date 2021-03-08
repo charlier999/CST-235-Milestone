@@ -72,6 +72,6 @@ public class FormController
 		
 		ss.AddSong(song);
 		
-		return "Response.xhtml";
+		return "AllProducts.xhtml";
 	}
 }
