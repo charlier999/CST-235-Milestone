@@ -14,7 +14,7 @@
 	<ui:define name="content">
 		<h:form>
 			Enter your Username : <h:inputText id="userName" value="#{userModel.userName}" title=""/> <h:message for="userName"/> <br/>
-			Last Name: <h:inputText id="password" value="#{userModel.password}" title=""/> <h:message for="password"/> <br/> 
+			Enter your Password: <h:inputSecret id="password" value="#{userModel.password}" title=""/> <h:message for="password"/> <br/> 
 			<h:commandButton action="#{formController.onLogin()}" value="Submit" />
 		</h:form>
 		<h:messages/>
