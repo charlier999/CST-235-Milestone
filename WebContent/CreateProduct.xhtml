@@ -20,7 +20,7 @@
 			ID: <h:inputText id="id" value="#{songModel.id}" title=""/> <h:message for="id"/> <br/>
 			Title: <h:inputText id="title" value="#{songModel.title}" title=""/> <h:message for="title"/> <br/> 
 			ArtistUserId: <h:inputText id="artistUserId" value="#{songModel.artistUserID}" title=""/> <h:message for="artistUserID"/> <br/>
-			AlbumId: <h:inputSecret id="albumID" value="#{songModel.albumID}" title="" /> <h:message for="albumID"/> <br/>
+			AlbumId: <h:inputText id="albumID" value="#{songModel.albumID}" title="" /> <h:message for="albumID"/> <br/>
 			Genre: <h:inputText id="genre" value="#{songModel.genre}" title=""/> <h:message for="genre"/> <br/>
 			Year: <h:inputText id="year" value="#{songModel.year}" title="" /> <h:message for="year"/> <br/>
 			<h:commandButton action="#{formController.onSongCreate()}" value="Submit" />
