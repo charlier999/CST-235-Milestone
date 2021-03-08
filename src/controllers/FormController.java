@@ -59,4 +59,15 @@ public class FormController
 		// Return registration Success page
 		return "RegistrationSuccess.xhtml";
 	}
+	public String onSongCreate()
+	{
+		FacesContext context = FacesContext.getCurrentInstance();
+		SongModel song = context.getApplication().evaluateExpressionGet(context, "#{songModel}", SongModel.class);
+		
+		SongService ss = new SongService();
+		
+		ss.AddSong(song);
+		
+		return "Response.xhtml";
+	}
 }
