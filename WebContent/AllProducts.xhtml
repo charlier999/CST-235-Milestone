@@ -8,6 +8,42 @@
 	
 	</h:head> 
 	<body> 
-	
+		<h:dataTable 
+			alue = "#{songData.songs}" 
+			var = "song"
+	   		styleClass = "songTable"
+	   		headerClass = "songTableHeader"
+	   		rowClasses = "songTableOddRow,songTableEvenRow"
+	   	>
+		   <h:column>    				
+		      <f:facet name = "header">ID:</f:facet>    				
+		      #{song.id}
+		   </h:column>
+		   
+		   <h:column>
+		      <f:facet name = "header">Title:</f:facet>
+		      #{song.title}
+		   </h:column>
+		   
+		   <h:column>
+		      <f:facet name = "header">Artist User ID:</f:facet>
+		      #{song.artistUserID}
+		   </h:column>
+		   
+		   <h:column>
+		      <f:facet name = "header">Album ID:</f:facet>
+		      #{song.albumID}
+		   </h:column>
+		   
+		   <h:column>
+		      <f:facet name = "header">Genre:</f:facet>
+		      #{song.genre}
+		   </h:column>
+		   
+		   <h:column>
+		      <f:facet name = "header">Year:</f:facet>
+		      #{song.year}
+		   </h:column>
+	</h:dataTable>
 	</body> 
 </html>

@@ -40,6 +40,8 @@ public class FormController
 		FacesContext context = FacesContext.getCurrentInstance();
 		UserModel user = context.getApplication().evaluateExpressionGet(context, "#{userModel}", UserModel.class);
 		
+		System.out.println("-----------------------------------{REGISTRATION GOT USER: " + user.toString() +"}-------------------------------------------");
+		
 		UserService us = new UserService();
 		
 		// look for users with the same username

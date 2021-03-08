@@ -41,9 +41,9 @@ public class FileAccessService
 		try 
 		{ 
 			if(this.file.createNewFile())
-				System.out.println("-----------------------------------------{FILE WAS CREATED}---------------------------------------------");
+				System.out.println("-----------------------------------------{FILE " + filePath + " WAS CREATED}--------------------------------------------------");
 			else
-				System.out.println("-----------------------------------------{FILE WAS NOT CREATED}---------------------------------------------");
+				System.out.println("-----------------------------------------{FILE " + filePath + "  WAS NOT CREATED}---------------------------------------------");
 		}
 		catch (IOException e) { e.printStackTrace(); }
 	}
@@ -76,7 +76,15 @@ public class FileAccessService
 			br.close();
 		}
 		
-		if(lines.isEmpty()) lines.add("No Lines Found");
+		if(lines.isEmpty()) 
+		{
+			System.out.println("-----------------------------------------{FILE " + file.getPath() + " HAS NO LINES}--------------------------------------------------");
+			lines.add("No Lines Found");
+		}
+		else
+		{
+			System.out.println("-----------------------------------{FILE " + file.getPath() + " HAS " + lines.size() + " LINES}-------------------------------------------");
+		}
 		
 		return lines;
 	}

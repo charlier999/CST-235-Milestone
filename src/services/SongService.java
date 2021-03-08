@@ -9,7 +9,7 @@ import beans.SongModel;
 import beans.UserModel;
 import fileAccessServices.SongFAO;
 
-@ManagedBean
+@ManagedBean(name = "songData", eager = true)
 @ViewScoped
 
 public class SongService
@@ -151,4 +151,8 @@ public class SongService
 		return results;
 	}
 	
+	public ArrayList<SongModel> getSongs()
+	{
+		return songs;
+	}
 }
