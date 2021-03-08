@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>Milestone3</title>
+</h:head> 
+
+
+<body> 
+	<ui:composition template="/layouts/commonLayout.xhtml">
+	
+	
+	<ui:define name="content">
+		<p>Hello! Here you can create a song! :)</p>
+	
+		<h:form>
+			ID: <h:inputText id="id" value="#{songModel.id}" title=""/> <h:message for="id"/> <br/>
+			Title: <h:inputText id="title" value="#{songModel.title}" title=""/> <h:message for="title"/> <br/> 
+			ArtistUserId: <h:inputText id="artistUserId" value="#{songModel.artistUserID}" title=""/> <h:message for="artistUserID"/> <br/>
+			AlbumId: <h:inputSecret id="albumID" value="#{songModel.albumID}" title="" /> <h:message for="albumID"/> <br/>
+			Genre: <h:inputText id="genre" value="#{songModel.genre}" title=""/> <h:message for="genre"/> <br/>
+			Year: <h:inputText id="year" value="#{songModel.year}" title="" /> <h:message for="year"/> <br/>
+			<h:commandButton action="#{formController.onSongCreate()}" value="Submit" />
+		</h:form>
+		<h:messages/>
+		
+		<a href="LandingPage.xhtml">Back to Landing Page :)</a>
+		
+	</ui:define>
+	
+	
+	</ui:composition>
+</body>
+
+</html>
