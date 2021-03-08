@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import javax.faces.bean.*;
 import javax.faces.context.FacesContext;
 
+import beans.SongModel;
 import beans.UserModel;
+import services.SongService;
 import services.UserService;
 
 @ManagedBean
