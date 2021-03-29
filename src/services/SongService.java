@@ -130,6 +130,32 @@ public class SongService
 		songs = sfao.GetAllSongs();
 	}
 	
+	
+	public boolean DeleteSong(int id)
+	{
+		boolean deleted = false;
+		int index = 0;
+		// Loops through all songs
+		for(SongModel song : songs)
+		{
+			// If the current song has the id as the paramater
+			if(song.getId() == id)
+			{
+				// Remove the song from the list
+				songs.remove(index);
+				// set the deleted status to true
+				deleted = true;
+				// Update the song table with the removed entry
+				sfao.UpdateTable(songs);
+				// Break from the loop
+				break;
+			}
+			index++;
+		}
+		
+		return deleted;
+	}
+	
 	/**
 	 * Searches through song list by title and genre for the search term.
 	 * @param searchTerm : The term to search for.
