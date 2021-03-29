@@ -16,7 +16,7 @@
 			    Genre: <h:inputText id="genre" value="#{song.genre}" title=""/> <h:message for="genre"/> <br/>
 			    Title: <h:inputSecret id="title" value="#{song.title}" title="" /> <h:message for="title"/> <br/>
 			    Year: <h:inputText id="year" value="#{song.year}" title=""/> <h:message for="year"/> <br/>
-          <h:commandButton action="#{formController.onSongUpdate(#{songModel})}" value="Submit" />
+          <h:commandButton action="#{formController.onSongUpdate(#{song})}" value="Submit" />
         </h:form>
         <h:messages/>
         
