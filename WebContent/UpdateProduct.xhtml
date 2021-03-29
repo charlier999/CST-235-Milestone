@@ -10,18 +10,18 @@
 	<body> 
 		<ui:composition template="/layouts/commonLayout.xhtml">
 			<ui:define name="content">
-        <h:form>
-          AlbumId <h:inputText id="albumId" value="#{song.albumID}" title=""/> <h:message for="albumID"/> <br/>
-			    ArtistUserId: <h:inputText id="artistUserID" value="#{song.artistUserID}" title=""/> <h:message for="artistUserID"/> <br/> 
-			    Genre: <h:inputText id="genre" value="#{song.genre}" title=""/> <h:message for="genre"/> <br/>
-			    Title: <h:inputSecret id="title" value="#{song.title}" title="" /> <h:message for="title"/> <br/>
-			    Year: <h:inputText id="year" value="#{song.year}" title=""/> <h:message for="year"/> <br/>
-          <h:commandButton action="#{formController.onSongUpdate(#{song})}" value="Submit" />
-        </h:form>
-        <h:messages/>
-        
-        <a href="AllProducts.xhtml">Show all Products</a>
-      </ui:define>
+		        <h:form>
+		          AlbumId <h:inputText id="albumId" value="#{song.albumID}" title=""/> <h:message for="albumID"/> <br/>
+					    ArtistUserId: <h:inputText id="artistUserID" value="#{song.artistUserID}" title=""/> <h:message for="artistUserID"/> <br/> 
+					    Genre: <h:inputText id="genre" value="#{song.genre}" title=""/> <h:message for="genre"/> <br/>
+					    Title: <h:inputSecret id="title" value="#{song.title}" title="" /> <h:message for="title"/> <br/>
+					    Year: <h:inputText id="year" value="#{song.year}" title=""/> <h:message for="year"/> <br/>
+		          <h:commandButton action="#{formController.onSongUpdate(#{song})}" value="Submit" />
+		        </h:form>
+	        	<h:messages/>
+		        
+		        <a href="AllProducts.xhtml">Show all Products</a>
+	    	</ui:define>
 		</ui:composition>
 	</body> 
 </html>
