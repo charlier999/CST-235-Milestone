@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>Show One Product</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheet.css"/>
+</h:head> 
+<body> 
+	<ui:composition template="/layouts/commonLayout.xhtml">
+	<ui:define name="content">
+	
+		<h:dataTable value="#{songModel}" var="s">
+ 			<h:column>
+ 				<f:facet name="header">AlbumId</f:facet>
+ 				#{s.albumID}
+ 			</h:column>
+ 			<h:column>
+ 				<f:facet name="header">ArtistUserId</f:facet>
+ 				#{s.artistUserID}
+ 			</h:column>
+ 			<h:column>
+ 				<f:facet name="header">Genre</f:facet>
+ 				#{s.genre}
+ 			</h:column>
+ 			<h:column>
+ 				<f:facet name="header">Id</f:facet>
+ 				#{s.id}
+ 			</h:column>
+ 			<h:column>
+ 				<f:facet name="header">Title</f:facet>
+ 				#{s.title}
+ 			</h:column>
+ 			<h:column>
+ 				<f:facet name="header">Year</f:facet>
+ 				#{s.year}
+ 			</h:column>
+ 		
+ 		</h:dataTable>
+ 		<a href="AllProducts.xhtml">Show all Products</a>
+	</ui:define>
+ 	</ui:composition>
+</body> 
+</html>
