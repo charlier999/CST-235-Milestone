@@ -11,50 +11,48 @@
 <body>
 	<ui:composition template="/layouts/commonLayout.xhtml">
 	
-	<ui:define name="content">
- 		Hello #{userModel.firstName} #{userModel.lastName}. Here is your information:
- 		<br></br>
- 	
- 		<h:dataTable value="#{userModel}" var="u">
- 			<h:column>
- 				<f:facet name="header">First Name</f:facet>
- 				#{u.firstName}
- 			</h:column>
- 			<h:column>
- 				<f:facet name="header">Last Name</f:facet>
- 				#{u.lastName}
- 			</h:column>
- 			<h:column>
- 				<f:facet name="header">User Name</f:facet>
- 				#{u.userName}
- 			</h:column>
- 			<h:column>
- 				<f:facet name="header">Password</f:facet>
- 				#{u.password}
- 			</h:column>
- 			<h:column>
- 				<f:facet name="header">Email</f:facet>
- 				#{u.email}
- 			</h:column>
- 			<h:column>
- 				<f:facet name="header">Address</f:facet>
- 				#{u.address}
- 			</h:column>
- 			<h:column>
- 				<f:facet name="header">Phone Number</f:facet>
- 				#{u.phoneNumber}
- 			</h:column>
- 		
- 		</h:dataTable>
- 		
-		<a href="LandingPage.xhtml">Back to Landing Page :)</a>
-		<br><br/>
-		<a href="CreateProduct.xhtml">Create A Song</a>
-		<br><br/>
-		<a href="AllProducts.xhtml">Show all Songs</a>
- 	</ui:define>
- 	
- 
+		<ui:define name="content">
+	 		Hello #{userModel.firstName} #{userModel.lastName}. Here is your information:
+	 		<br></br>
+	 	
+	 		<h:dataTable value="#{userModel}" var="u">
+	 			<h:column>
+	 				<f:facet name="header">First Name</f:facet>
+	 				#{u.firstName}
+	 			</h:column>
+	 			<h:column>
+	 				<f:facet name="header">Last Name</f:facet>
+	 				#{u.lastName}
+	 			</h:column>
+	 			<h:column>
+	 				<f:facet name="header">User Name</f:facet>
+	 				#{u.userName}
+	 			</h:column>
+	 			<h:column>
+	 				<f:facet name="header">Password</f:facet>
+	 				#{u.password}
+	 			</h:column>
+	 			<h:column>
+	 				<f:facet name="header">Email</f:facet>
+	 				#{u.email}
+	 			</h:column>
+	 			<h:column>
+	 				<f:facet name="header">Address</f:facet>
+	 				#{u.address}
+	 			</h:column>
+	 			<h:column>
+	 				<f:facet name="header">Phone Number</f:facet>
+	 				#{u.phoneNumber}
+	 			</h:column>
+	 		
+	 		</h:dataTable>
+	 		
+			<a href="LandingPage.xhtml">Back to Landing Page :)</a>
+			<br></br>
+			<a href="CreateProduct.xhtml">Create A Song</a>
+			<br></br>
+			<a href="AllProducts.xhtml">Show all Songs</a>
+	 	</ui:define>
  	</ui:composition>
 </body>
  
