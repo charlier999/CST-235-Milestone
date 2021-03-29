@@ -11,17 +11,17 @@
 		<ui:composition template="/layouts/commonLayout.xhtml">
 			<ui:define name="content">
 				<h3>Edit Song Data</h3>
+				<p>#{songData.GetSongByID(songID).id}</p>
 		        <h:form>
-		        	AlbumId <h:inputText id="albumId" value="#{songModel.albumID}" title=""/>
-		          	<p>test #{song.albumID}</p>
+		        	AlbumId <h:inputText id="albumId" value="#{songData.GetSongByID(songID).albumID}" title=""/>
 		          	<br/>
-					ArtistUserId: <h:inputText id="artistUserID" value="#{songModel.artistUserID}" title=""/>
+					ArtistUserId: <h:inputText id="artistUserID" value="#{songData.GetSongByID(songID).artistUserID}" title=""/>
 					<br/> 
-					Genre: <h:inputText id="genre" value="#{songModel.genre}" title=""/>
+					Genre: <h:inputText id="genre" value="#{songData.GetSongByID(songID).genre}" title=""/>
 					<br/>
-					Title: <h:inputSecret id="title" value="#{songModel.title}" title="" />  
+					Title: <h:inputText id="title" value="#{songData.GetSongByID(songID).title}" title="" />  
 					<br/>
-					Year: <h:inputText id="year" value="#{songModel.year}" title=""/>
+					Year: <h:inputText id="year" value="#{songData.GetSongByID(songID).year}" title=""/>
 					<br/>
 		          	<h:commandButton action="#{formController.onSongUpdate()}" value="Submit" />
 		        </h:form>

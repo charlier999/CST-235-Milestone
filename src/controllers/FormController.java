@@ -92,11 +92,13 @@ public class FormController
 	         fc.getExternalContext().getRequestParameterMap();
 	      String data =  params.get("songID");
 	      
+	      int songID = Integer.parseInt(data);
+	      
 	      SongService ss = new SongService();
 	      
-	      SongModel song = ss.GetSongByID(Integer.parseInt(data));
+	      SongModel song = ss.GetSongByID(songID);
 	      
-	      FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("song", song);
+	      FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("songID", songID);
 	      return "UpdateProduct.xhtml";
 	}
 
