@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+	<h:head>
+	
+	</h:head> 
+	<body> 
+		<ui:composition template="/layouts/commonLayout.xhtml">
+			<ui:define name="content">
+        <h:form>
+          AlbumId <h:inputText id="albumId" value="#{songModel.albumID}" title=""/> <h:message for="albumID"/> <br/>
+			    ArtistUserId: <h:inputText id="artistUserID" value="#{songModel.artistUserID}" title=""/> <h:message for="artistUserID"/> <br/> 
+			    Genre: <h:inputText id="genre" value="#{songModel.genre}" title=""/> <h:message for="genre"/> <br/>
+			    Title: <h:inputSecret id="title" value="#{songModel.title}" title="" /> <h:message for="title"/> <br/>
+			    Year: <h:inputText id="year" value="#{songModel.year}" title=""/> <h:message for="year"/> <br/>
+          <h:commandButton action="#{formController.onSongUpdate(#{songModel})}" value="Submit" />
+        </h:form>
+        </h:messages/>
+        
+        <a href="AllProducts.xhtml">Show all Products</a>
+      </ui:define>
+		</ui:composition>
+	</body> 
+</html>
