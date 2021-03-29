@@ -74,4 +74,15 @@ public class FormController
 		
 		return "AllProducts.xhtml";
 	}
+	public String onSongUpdate()
+	{
+		FacesContext context = FacesContext.getCurrentInstance();
+		SongModel song = context.getApplication().evaluateExpressionGet(context, "#{songModel}", SongModel.class);
+		
+		SongService ss = new SongService();
+		
+		ss.UpdateSong(song);
+		
+		return "AllProducts.xhtml";
+	}
 }
