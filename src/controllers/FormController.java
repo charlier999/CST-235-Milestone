@@ -77,8 +77,8 @@ public class FormController
 	public String onSongUpdate()
 	{
 		FacesContext context = FacesContext.getCurrentInstance();
-		SongModel song = context.getApplication().evaluateExpressionGet(context, "#{songModel}", SongModel.class);
-		
+		SongModel song = context.getApplication().evaluateExpressionGet(context, "#{songData.GetSongByID(songID)}", SongModel.class);
+		int songID = context.getApplication().evaluateExpressionGet(context, "#{songID}", int.class);
 		SongService ss = new SongService();
 		
 		ss.UpdateSong(song);

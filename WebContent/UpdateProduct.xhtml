@@ -13,6 +13,8 @@
 				<h3>Edit Song Data</h3>
 				<p>#{songData.GetSongByID(songID).id}</p>
 		        <h:form>
+		        	SongID:<h:inputText id="id" value="#{songData.GetSongByID(songID).id}" title=""/>
+		        	<br/>
 		        	AlbumId <h:inputText id="albumId" value="#{songData.GetSongByID(songID).albumID}" title=""/>
 		          	<br/>
 					ArtistUserId: <h:inputText id="artistUserID" value="#{songData.GetSongByID(songID).artistUserID}" title=""/>
