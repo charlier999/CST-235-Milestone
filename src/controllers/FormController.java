@@ -1,6 +1,7 @@
 package controllers;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import javax.faces.bean.*;
 import javax.faces.context.FacesContext;
@@ -34,7 +35,6 @@ public class FormController
 		// Send user to response view
 		return "Response.xhtml";
 	}
-	
 	public String onRegistration()
 	{
 		FacesContext context = FacesContext.getCurrentInstance();
@@ -85,4 +85,19 @@ public class FormController
 		
 		return "AllProducts.xhtml";
 	}
+	public String showSongUpdatePage()
+	{
+	      FacesContext fc = FacesContext.getCurrentInstance();
+	      Map<String,String> params = 
+	         fc.getExternalContext().getRequestParameterMap();
+	      String data =  params.get("songID");
+	      
+	      SongService ss = new SongService();
+	      
+	      SongModel song = ss.GetSongByID(Integer.parseInt(data));
+	      
+	      FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("song", song);
+	      return "UpdateProduct.xhtml";
+	}
+
 }

@@ -46,6 +46,13 @@
 				      <f:facet name = "header">Year:</f:facet>
 				      #{song.year}
 				   </h:column>
+				   <h:column>
+				      <f:facet name = "header">Update:</f:facet>
+				      <h:commandButton id = "submit"
+				      action="#{formController.showSongUpdatePage()}" value="Update" >
+				      	<f:param name="songID" value="#{song.id}" />
+				      </h:commandButton>
+				   </h:column>
 				</h:dataTable>
 				
 				<br></br>
